@@ -1,0 +1,14 @@
+.header-container{
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    max-height: 15vh;
+    background-color: var(--primary-color);
+    gap: 1%;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.button-search-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
