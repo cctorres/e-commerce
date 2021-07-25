@@ -1,0 +1,19 @@
+.pagination{
+    padding: 1vh;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 30vh;
+    height: 50vh;
+    font-size: small;
+    margin-top: 0.5vh;
+}
+
+.card-img-top{
+    object-fit: cover;
+    height: 20vh
+}

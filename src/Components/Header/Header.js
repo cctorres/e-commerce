@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useFirebaseApp } from 'reactfire';
+import { provider } from '../../firebaseProyect';
+import 'firebase/auth'
 import "./Header.css";
 
 const Header = () => {
+  const firebase = useFirebaseApp();
   const [userLogged, setUserLogged] = useState(false);
   const history = useHistory();
 
@@ -11,6 +15,11 @@ const Header = () => {
     const [{ value }] = e.target;
     const trimValue = value.trim();
     history.push("/products/" + trimValue, { search: trimValue });
+    localStorage.setItem("searchValue", trimValue);
+  };
+
+  const loggin = async () => {
+    await firebase.auth().signInWithPopup(provider)
   };
 
   return (
@@ -34,7 +43,7 @@ const Header = () => {
           <i className="fas fa-user-circle"></i>
         </button>
       ) : (
-        <button className="btn btn-outline-warning">Iniciar sesión</button>
+        <button className="btn btn-outline-warning" onClick={loggin}>Iniciar sesión</button>
       )}
     </div>
   );

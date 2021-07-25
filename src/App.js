@@ -6,6 +6,7 @@ import Car from "./Components/Pages/Car";
 import Home from "./Components/Pages/Home";
 import Products from "./Components/Pages/Products";
 import Profile from "./Components/Pages/Profile";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/profile" component={Profile} />
           </Switch>
         </div>
+        <Footer/>
       </Router>
     </div>
   );

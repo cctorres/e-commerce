@@ -1,0 +1,20 @@
+.footer-container{
+    background-color: var(--primary-color);
+    height: auto;
+    color: var(--lg-color);
+    align-items: center;
+    padding: 1vh;
+}
+
+.footer-colums{
+    display: grid;
+    grid-template-columns: 33% 33% auto;
+    border-bottom: thin;
+    border-color: thistle;
+    border-style: none none solid none;
+}
+
+.contact-icons{
+    display: grid;
+    grid-template-columns: 33% 33% auto;
+}
