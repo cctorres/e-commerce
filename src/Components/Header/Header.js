@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useFirebaseApp } from 'reactfire';
 import { provider } from '../../firebaseProyect';
@@ -19,8 +19,15 @@ const Header = () => {
   };
 
   const loggin = async () => {
-    await firebase.auth().signInWithPopup(provider)
+    localStorage.setItem("isLogged","true");
+    await firebase.auth().signInWithPopup(provider);
+    window.location.reload();
   };
+
+  useEffect(() => {
+    const isLoggedText = localStorage.getItem("isLogged");
+    setUserLogged(isLoggedText === "true")
+  }, []);
 
   return (
     <div className="header-container">
@@ -43,7 +50,7 @@ const Header = () => {
           <i className="fas fa-user-circle"></i>
         </button>
       ) : (
-        <button className="btn btn-outline-warning" onClick={loggin}>Iniciar sesión</button>
+        <button className="btn btn-warning" onClick={loggin}>Iniciar sesión</button>
       )}
     </div>
   );

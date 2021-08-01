@@ -30,12 +30,17 @@ const Products = () => {
   }, [page]);
 
   const addToCar = async (product) => {
-    await firebase.firestore().collection(user.uid).add({
-      name: product.title,
-      id: product.id,
-      price: product.price,
-      thumbnail: product.thumbnail,
-    });
+    if (user) {
+      await firebase.firestore().collection(user.uid).add({
+        name: product.title,
+        id: product.id,
+        price: product.price,
+        thumbnail: product.thumbnail,
+      });
+      alert("Producto agregado");
+    } else {
+      alert("Por favor, inica sesión primero");
+    }
   };
 
   const prevPage = () => {

@@ -3,7 +3,6 @@ import { useFirebaseApp, useUser } from "reactfire";
 import { db } from "../../firebaseProyect";
 
 const Car = () => {
-  const firebase = useFirebaseApp();
     const { data: user } = useUser();
   const [cards, setCards] = useState([]);
 

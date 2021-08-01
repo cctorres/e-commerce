@@ -25,6 +25,8 @@ const Profile = () => {
 
   const logOut = async() => {
       await firebase.auth().signOut();
+      localStorage.setItem("isLogged","false");
+      window.location.reload();
   }
 
   useEffect(() => {

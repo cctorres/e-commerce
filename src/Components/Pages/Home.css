@@ -1,0 +1,51 @@
+.banner-home {
+  padding: 1% 0;
+  width: 100vw;
+  height: 55vh;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: var(--black-opacity);
+}
+
+.home-promo-container {
+  width: 30vw;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.product-home-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  width: 65vw;
+  height: 80vh;
+}
+.woman-container {
+  padding: 1%;
+  display: flex;
+}
+
+.man-container {
+  padding: 1%;
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .product-home-container {
+    height: 75vh;
+
+    align-content: start;
+    align-items: start;
+    justify-items: start;
+    justify-content: start;
+    overflow: scroll;
+  }
+
+  .home-promo-container {
+    width: 40vw;
+  }
+}
