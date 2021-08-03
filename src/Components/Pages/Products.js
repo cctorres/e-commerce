@@ -15,14 +15,11 @@ const Products = () => {
     const url =
       "https://api.mercadolibre.com/sites/MCO/search?q=" +
       searchValue +
-      "&category=MCO1430&limit=20&offset=" +
+      "&category=MCO1430&limit=18&offset=" +
       offset;
     const response = await fetch(url);
-    console.log(response.status);
     const responseJSON = await response.json();
     setProducts(responseJSON);
-    console.log("offset: " + offset);
-    console.log("page: " + page);
   };
 
   useEffect(() => {
@@ -31,7 +28,7 @@ const Products = () => {
 
   const addToCar = async (product) => {
     if (user) {
-      await firebase.firestore().collection(user.uid).add({
+      await firebase.firestore().collection("car-"+user.uid).add({
         name: product.title,
         id: product.id,
         price: product.price,

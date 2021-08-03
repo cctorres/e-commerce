@@ -1,5 +1,4 @@
 .banner-home {
-  padding: 1% 0;
   width: 100vw;
   height: 55vh;
   object-fit: cover;
@@ -9,17 +8,49 @@
   background-color: var(--black-opacity);
 }
 
-.home-promo-container {
+.man-container {
+  background-image: url("https://media.istockphoto.com/photos/light-brown-with-spot-color-cotton-polyester-fabric-texture-fashion-picture-id836594750");
+  border: var(--primary-color) solid 0.1rem;
+}
+
+.woman-container {
+  background-image: url("https://media.istockphoto.com/photos/light-brown-with-spot-color-cotton-polyester-fabric-texture-fashion-picture-id836594750");
+  border: var(--primary-color) solid 0.1rem;
+}
+
+.home-promo-container-woman {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30vw;
-  height: 80vh;
-  object-fit: cover;
+  height: 80vh;  
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../assets/images/woman.jpg");
+}
+
+.home-promo-container-man {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  height: 80vh;  
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../assets/images/man.jpg");
+}
+
+.home-promo-text-title{
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  width: 100%;
+  font-size:3rem;
 }
 
 .product-home-container {
   display: flex;
-  align-content: center;
   align-items: center;
-  justify-items: center;
   justify-content: center;
   width: 65vw;
   height: 80vh;
@@ -37,10 +68,7 @@
 @media (max-width: 700px) {
   .product-home-container {
     height: 75vh;
-
-    align-content: start;
     align-items: start;
-    justify-items: start;
     justify-content: start;
     overflow: scroll;
   }
@@ -48,4 +76,8 @@
   .home-promo-container {
     width: 40vw;
   }
+
+  .home-promo-text-title{
+  font-size:1rem;
+}
 }

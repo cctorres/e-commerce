@@ -24,7 +24,7 @@ const ProductsPromo = ({ searchValue }) => {
 
   const addToCar = async (product) => {
     if (user) {
-      await firebase.firestore().collection(user.uid).add({
+      await firebase.firestore().collection("car-"+user.uid).add({
         name: product.title,
         id: product.id,
         price: product.price,

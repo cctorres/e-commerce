@@ -14,8 +14,9 @@ const Header = () => {
     e.preventDefault();
     const [{ value }] = e.target;
     const trimValue = value.trim();
-    history.push("/products/" + trimValue, { search: trimValue });
+    history.push("/products/" + trimValue, { search: trimValue });    
     localStorage.setItem("searchValue", trimValue);
+    window.location.reload();
   };
 
   const loggin = async () => {
@@ -23,6 +24,10 @@ const Header = () => {
     await firebase.auth().signInWithPopup(provider);
     window.location.reload();
   };
+
+  const setProfile = () => {
+    history.push("/profile");
+  }
 
   useEffect(() => {
     const isLoggedText = localStorage.getItem("isLogged");
@@ -46,7 +51,7 @@ const Header = () => {
         </div>
       </form>
       {userLogged ? (
-        <button className="btn btn-outline-warning">
+        <button className="btn btn-outline-warning" onClick={setProfile}>
           <i className="fas fa-user-circle"></i>
         </button>
       ) : (

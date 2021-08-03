@@ -2,13 +2,15 @@
     padding: 1vh;
     display: flex;
     align-items: center;
-    justify-items: center;
     justify-content: center;
 }
 
 .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 30vh;
-    height: 50vh;
+    height: 45vh;
     font-size: small;
     margin-top: 0.5vh;
 }
@@ -16,4 +18,12 @@
 .card-img-top{
     object-fit: cover;
     height: 20vh
+}
+
+.card-body{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

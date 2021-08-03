@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 import banner1 from "../../assets/images/banner1.jpg";
 import banner2 from "../../assets/images/banner2.jpg";
-import man from "../../assets/images/man.jpg";
-import woman from "../../assets/images/woman.jpg";
 import "./Home.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -38,7 +36,9 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
       <div className="woman-container">
-        <img className="home-promo-container" src={woman} alt="woman"></img>
+        <div className="home-promo-container-woman" data-aos="fade-right">
+          <p className="home-promo-text-title"> Women</p>
+        </div>
         <div className="product-home-container">
           <ProductPromo searchValue="woman" />
         </div>
@@ -47,7 +47,9 @@ const Home = () => {
         <div className="product-home-container">
           <ProductPromo searchValue="man" />
         </div>
-        <img className="home-promo-container" src={man} alt="man"></img>
+        <div className="home-promo-container-man" data-aos="fade-left">
+          <p className="home-promo-text-title">Men</p>
+        </div>
       </div>
     </div>
   );
